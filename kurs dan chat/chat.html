@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <title></title>
+        <style>
+            .box {
+                width: 600px;
+                border: 1px solid black;
+                
+            }
+            #chat {
+                height: 400px;
+
+            }
+            input {
+                width: 90%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div id="chat"></div>
+            <form method="REQUEST" onsubmit="return kirim()">
+                <input type="text" id="pesan" name="pesan">
+                <button onclick="return kirim()">Kirim</button>
+            </form>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        function kirim() {
+            let pesan = document.getElementById("pesan").value;
+            document.getElementById("chat").innerHTML += pesan + "<br>"
+            document.getElementById("pesan").value = ""
+            return false;
+        }
+    </script>
+
+</html>
